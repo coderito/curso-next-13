@@ -1,6 +1,10 @@
+import NotFoundComponents from "./components/NotFoundComponents"
+
 function SubPage() {
   return (
-    <div>Subpage</div>
+    <div>
+        <NotFoundComponents />  
+    </div>
   )
 }
 
