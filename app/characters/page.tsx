@@ -1,9 +1,17 @@
-import React from 'react'
+import { getCharacter } from "./services";
 
-const Characters = () => {
-  return (
-    <div>Characters</div>
-  )
+async function fetchCharacter() {
+  return await getCharacter();
 }
 
-export default Characters
+async function Characters() {
+  const characters = await fetchCharacter();
+  return (
+    <div>
+      <h1>Welcome Characters</h1>
+      <div>{JSON.stringify(characters)}</div>
+    </div>
+  );
+}
+
+export default Characters;
