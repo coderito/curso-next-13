@@ -1,3 +1,4 @@
+import { Card } from "@/components/Card";
 import { getCharacter } from "./services";
 
 async function fetchCharacter() {
@@ -7,10 +8,11 @@ async function fetchCharacter() {
 async function Characters() {
   const characters = await fetchCharacter();
   return (
-    <div>
-      <h1>Welcome Characters</h1>
-      <div>{JSON.stringify(characters)}</div>
-    </div>
+      <>
+        {characters.map((character) => (
+          <Card key={character.id} data={character} />
+        ))}
+      </>
   );
 }
 
